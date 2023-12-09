@@ -1,0 +1,182 @@
+
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .column {
+      float: left;
+      width: 20%;
+      padding: 1px;
+    }
+    
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
+<body style="background-color:rgba(115, 149, 235, 0.662);">
+    
+    <font size="50">  
+        <center>
+            <b>CS 180 Final Project Deliverable</b>
+        </center>
+    </font>  
+        
+    </p>  
+    <br>
+    <br>
+    <p style="font-size: 15px">
+        <center>
+            <b>Stephen Yang and Minjune Kim SID: 3035725692 and _________</b>
+        </center>
+    </p>  
+    <br>
+    <p style="font-size: 30px">
+        <center>
+            <b>Project 1 of 3: Lightfield Camera</b>
+        </center>
+    </p>  
+    <br>
+    <p style="font-size: 30px margin 30px">
+        <center>
+            When toying with the images, we noticed by averaging out the different images we got a clear back of the image but not a clear front.
+            <br>
+            <br>
+
+        </center>
+       
+        
+
+    <p style="font-size: 30px margin 30px">
+        <center>
+            <img src="blur/output/blur_front.png" width="500"height="300">
+            <br>
+       Averaged images in the dataset
+
+        </center>
+       
+        
+    </p>
+
+    <center>
+       Then when we adjusted the images based on the coordinates in the image name we got a clear middle row but everything else was blurry
+        <br>
+        <br>
+        <img src="blur/output/blur_middle.png" width="500"height="300">
+
+    </center>
+
+    <p style="font-size: 30px margin 30px">
+        <center>
+            We then toyed around with the different adjustments shifting the image by the coordinates in the file name multipled by some constant
+            <br>
+            <br>
+
+        </center>
+    
+
+    <p style="font-size: 30px margin 30px">
+        <center>
+            <img src="blur/output/chess.gif" width="500"height="300">
+            <br>
+        As the constant increases, the clear part of the image gets closer to the front.
+
+        </center>
+    
+
+    <p style="font-size: 30px margin 30px">
+        <center>
+            Next we worked on varying aperture of the image. We realized by manipulating the number of images that were taken in we got varying degrees of aperature.
+            <br>
+            <br>
+
+        </center>
+    <p style="font-size: 30px margin 30px">
+        <center>
+            <img src="blur/output/ap.gif" width="500"height="300">
+            <br>
+        We used all the images and decreased the number of images used to maniuplate the aperature.
+
+        </center>
+    <p style="font-size: 30px">
+        <center>
+            <b>Bells and Whistles: Interactive Refocusing </b>
+        </center>
+    </p>  
+
+    <p style="font-size: 30px margin 30px">
+        <center>
+            We realized we could map out a range of constants that represents the the constant required to blur everything except the back (0) and the constant required to blur everything except the front (3)
+            Then we could find the constant that would make that point clear by the formula: 3 * y_coord_of_point / im.shape[0]. Multiplying the max number the constant could be by a fraction representing how far down the y_coord is.
+            <br>
+            <br>
+
+        </center>
+
+        <center>
+        <img src="blur/output/(1329, 333)_beginning.png" alt="Snow" width="500"height="400">
+
+        <img src="blur/output/(1329, 333)_blur.png" alt="Forest" width="500"height="400">
+
+        <img src="blur/output/(1330, 25)_beginning.png" alt="Snow" width="500"height="400">
+
+        <img src="blur/output/(1330, 25)_blur.png" alt="Forest" width="500"height="400">
+
+        <img src="blur/output/(371, 716)_beginning.png" alt="Snow" width="500"height="400">
+
+        <img src="blur/output/(371, 716)_blur.png" alt="Forest" width="500"height="400">
+        <br>
+        On the left are the images in the beginning and the right shows the blurred equivalent. Note that the dot on the image is where the code is trying to refocus.
+    </center>
+          </div>
+
+    <p style="font-size: 30px">
+    <center>
+        <b>Project 2 of 3: A Neural Algorithm of Artistic Style</b>
+    </center>
+    </p>  
+          <p style="font-size: 30px margin 30px">
+            <center>
+               In A Neural Algorithm of Artistic Style, Gatys suggests to use the VGG-19 neural network with pre-trained weights. Because of this, we used a library online to get the VGG-19 neural net.
+               We also heeded the warning in the paper and changed all the maxpool layers to avgpool.
+                
+               <br>
+               <br>
+               <img src="vgg.png" alt="Forest" width="700"height="400">
+               <br>
+               <br>
+                
+               
+
+                <br>
+                <br>
+
+                Content Loss Function
+                <br>
+                The content loss measures the difference in content between the generated image and the content image. 
+                It is typically computed using the feature maps of a certain layer in the VGG-19 network. 
+
+                <br>
+                <br>
+
+                Style Loss Function
+                <br>
+                The style loss measures the difference in style between the generated image and the style image. 
+                It involves comparing the correlations between the different feature maps across the layers of the VGG-19 network. 
+
+                
+                <br>
+                <br>
+    
+            </center>
+        </p> 
+    </p> 
+</p> 
+</p> 
+</p> 
+</p> 
+</p> 

@@ -31,7 +31,7 @@
     <br>
     <p style="font-size: 15px">
         <center>
-            <b>Stephen Yang and Minjune Kim SID: 3035725692 and _________</b>
+            <b>Stephen Yang and Minjune Kim SID: 3035725692 and 3037012174</b>
         </center>
     </p>  
     <br>
@@ -171,6 +171,60 @@
                 
                 <br>
                 <br>
+    
+            </center>
+            <center>
+            <b>Project 3 of 3: Image Quilting</b>
+    </center>
+    </p>  
+          <p style="font-size: 30px margin 30px">
+            <center>
+               In this project, we explored a way to generate a larger texture image from a small sample. We used SIGGRAPH 2001 paper by Efros and Freeman as our referance.
+               The main goal of this project was to account for the smoothness of attaching the small texture samples together. When we did random sampling, the edges of each random samples did not look smooth. 
+               The overlapping patches and the seam finding helped us improve the roughness of the concatanation of the random samples. 
+                
+               <br>
+               <br>
+               <img src="image_quilting/outputs/random_sampling.png" alt="random_sample">
+               <br>
+               Random Sampling of Brick Wall
+               <br>
+               <br>
+               <center>
+                Then we created a function that would make the sample texture more smooth. 
+                 <br>
+                 <br>
+                 <img src="image_quilting/outputs/image_quilting_sample.png" alt = "quilt_sample" width = 50%>
+                <br>
+                Quilt Sampling of Brick Wall
+                <br>
+                <br>
+             </center>
+             <center>
+                Then we made a seam finder to locate and remove the edge artifacts from the overlapping patches from our last result. <br>
+                Out of the three results, this result should and looked the most smooth. 
+                 <br>
+                 <br>
+                 <img src="image_quilting/outputs/quilt_cut_sample.png" alt = "quilt_sample" width = 50%>
+         <br>
+         Quilt Sampling with seam of Brick Wall
+             </center>
+             
+               
+
+                <br>
+                <br>
+            <center>
+                <b>Incorporation of Texture Transfer. </b>
+            </center>
+                <br>
+                <br>
+                I combined these two images to create a texture sample. 
+                <br>
+                <img src="image_quilting/samples/feynman.png" alt = "quilt_sample" width = 25%>
+                <img src="image_quilting/samples/toast.jpg" alt = "quilt_sample" width = 25%>
+                <br>
+                <img src="image_quilting/outputs/toast_and_feynman.png" alt = "quilt_sample" width = 50%>
     
             </center>
         </p> 

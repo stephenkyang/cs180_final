@@ -280,9 +280,9 @@ def texture_transfer(sample, patch_size, overlap, tol, guidance_im, alpha):
 #     plt.show()
 
 sample_img_fn = 'samples/feynman.tiff' # feel free to change
-guidance_img = cv2.cvtColor(cv2.imread(sample_img_fn), cv2.COLOR_BGR2RGB)
-sample_img_fn = 'samples/toast.jpg' # feel free to change
 texture_img = cv2.cvtColor(cv2.imread(sample_img_fn), cv2.COLOR_BGR2RGB)
+sample_img_fn = 'samples/toast.jpg' # feel free to change
+guidance_img = cv2.cvtColor(cv2.imread(sample_img_fn), cv2.COLOR_BGR2RGB)
 patch_size = 25
 overlap = 11
 tol = 3

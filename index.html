@@ -155,23 +155,29 @@
                 <br>
                 <br>
 
-                Content Loss Function
+                <b>Content Loss Function</b>
                 <br>
                 The content loss measures the difference in content between the generated image and the content image. 
-                It is typically computed using the feature maps of a certain layer in the VGG-19 network. 
+                It is typically computed using the feature maps of a certain layer in the VGG-19 network. We took the original style and the content style of the image and got the L2 norm of the images, and divided it by 2. As stated on the paper. 
 
                 <br>
                 <br>
 
-                Style Loss Function
+                <b>Style Loss Function</b>
                 <br>
                 The style loss measures the difference in style between the generated image and the style image. 
-                It involves comparing the correlations between the different feature maps across the layers of the VGG-19 network. 
+                It involves comparing the correlations between the different feature maps across the layers of the VGG-19 network. We took the original style and the stylistic image and got the L2 norm, and divided it by 4 * features^2 * feature_field^2. As stated on the paper.
 
-                
                 <br>
                 <br>
-    
+                I combined these two images, using the first as the content and second as the style. 
+                <br>
+                <img src="venice.webp" alt = "quilt_sample" width = 25%>
+                <img src="monet.jpeg" alt = "quilt_sample" width = 25%>
+                <br>
+                <img src="images/monet/venice4.png" alt = "quilt_sample" width = 25%>
+                <br>
+                This image was created with learning rate of 0.004 and alpha/beta of 1/10
             </center>
             <center>
             <b>Project 3 of 3: Image Quilting</b>
@@ -191,7 +197,7 @@
                <br>
                <br>
                <center>
-                Then we created a function that would make the sample texture more smooth. 
+                Then we created a function that would make the sample texture more smooth. We implemented min-cost function of the output image and newly sampled patch. We would choose one of the "tol" lowest cost values to be the sampled patch. 
                  <br>
                  <br>
                  <img src="image_quilting/outputs/image_quilting_sample.png" alt = "quilt_sample" width = 50%>
@@ -201,7 +207,7 @@
                 <br>
              </center>
              <center>
-                Then we made a seam finder to locate and remove the edge artifacts from the overlapping patches from our last result. <br>
+                Then we implemented a min-cost function that would return the cost of a patht through each pixel. We needed to use this function for horizontal mask and vertical mask. If a patch had both, we used np.logical_and to combine the two masks.  <br>
                 Out of the three results, this result should and looked the most smooth. 
                  <br>
                  <br>
@@ -224,7 +230,7 @@
                 <img src="image_quilting/samples/feynman.png" alt = "quilt_sample" width = 25%>
                 <img src="image_quilting/samples/toast.jpg" alt = "quilt_sample" width = 25%>
                 <br>
-                <img src="image_quilting/outputs/toast_and_feynman.png" alt = "quilt_sample" width = 50%>
+                <img src="image_quilting/outputs/toast_and_feynman_1.png" alt = "quilt_sample" width = 25%>
     
             </center>
         </p> 
